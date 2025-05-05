@@ -1,50 +1,176 @@
-# Welcome to your Expo app 👋
+# NGC Financial Services
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## 📱 Plateforme de transactions financières Canada-Afrique
 
-## Get started
+[![React Native](https://img.shields.io/badge/React%20Native-v0.72.4-blue.svg)](https://reactnative.dev/)
+[![Expo](https://img.shields.io/badge/Expo-SDK%2049-black.svg)](https://expo.dev/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-1. Install dependencies
+## 📋 Description
 
-   ```bash
-   npm install
-   ```
+NGC Financial Services est une plateforme financière permettant aux utilisateurs d'effectuer des transactions financières entre le Canada et l'Afrique, notamment des transferts d'argent, des recharges de compte et des demandes de prêt personnel. Notre service principal "Direct Money" met en avant les transactions Canada-Afrique, intégrant de nombreuses solutions de paiement locales et internationales telles que Orange Money, MTN Mobile Money, cartes bancaires, PayPal et Interac.
 
-2. Start the app
+## ✨ Fonctionnalités principales
 
-   ```bash
-   npx expo start
-   ```
+- 💰 **Transfert d'argent** entre le Canada et plusieurs pays africains
+- 💳 **Réapprovisionnement de comptes** (Wallet NGC, comptes bancaires, PayPal)
+- 💼 **Demande de prêt personnel** (disponible pour le Canada)
+- 👥 **Système de parrainage** avec commissions
+- 📊 **Tableau de bord** avec historique des transactions et statistiques
+- 🔔 **Système de notifications** en temps réel
+- 🛡️ **Sécurité avancée** avec authentification à deux facteurs
 
-In the output, you'll find options to open the app in a
+## 🔧 Technologies utilisées
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- **Frontend Mobile & Web**: React Native avec Expo
+- **Backend**: Node.js avec Express
+- **Base de données**: MongoDB
+- **Authentication**: JWT, OAuth2
+- **Paiements**: 
+  - Cynetpay (paiements locaux africains)
+  - Stripe (cartes bancaires internationales)
+  - API PayPal
+  - Intégration Mobile Money (Orange Money, MTN Mobile Money)
+  - Interac
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🚀 Installation & Configuration
 
-## Get a fresh project
+### Prérequis
 
-When you're ready, run:
+- Node.js (v16+)
+- Expo CLI
+- Git
+
+### Étapes d'installation
 
 ```bash
-npm run reset-project
+# Cloner le dépôt
+git clone https://github.com/votre-organisation/ngc-financial-services.git
+cd ngc-financial-services
+
+# Installer les dépendances
+npm install
+
+# Configurer les variables d'environnement
+cp .env.example .env
+# Éditer le fichier .env avec vos clés API et configurations
+
+# Lancer l'application en mode développement
+expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 📱 Utilisation de l'application
 
-## Learn more
+### Pour les clients
 
-To learn more about developing your project with Expo, look at the following resources:
+1. Téléchargez l'application depuis l'App Store ou Google Play
+2. Créez un compte en fournissant les informations requises
+3. Complétez votre profil pour débloquer toutes les fonctionnalités
+4. Effectuez des transferts, des réapprovisionnements ou demandez un prêt
+5. Suivez vos transactions et gérez votre wallet
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### Pour les administrateurs
 
-## Join the community
+1. Accédez à l'interface d'administration via le web
+2. Consultez et gérez les transactions, utilisateurs et demandes de prêt
+3. Visualisez les statistiques et rapports
 
-Join our community of developers creating universal apps.
+## 🏗️ Structure du projet
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```
+ngc-financial-services/
+├── app/                      # Code source de l'application
+│   ├── assets/               # Images, fonts et autres ressources
+│   ├── components/           # Composants réutilisables
+│   ├── config/               # Configuration de l'application
+│   ├── contexts/             # Contextes React (auth, theme, etc.)
+│   ├── hooks/                # Hooks personnalisés
+│   ├── navigation/           # Configuration de la navigation
+│   ├── screens/              # Écrans de l'application
+│   ├── services/             # Services API et autres
+│   ├── store/                # État global (Redux ou autre)
+│   ├── types/                # Définitions TypeScript
+│   └── utils/                # Utilitaires et helpers
+├── backend/                  # Code serveur (si inclus dans le même repo)
+├── docs/                     # Documentation
+├── .env.example              # Exemple de variables d'environnement
+├── .gitignore                # Fichiers ignorés par Git
+├── app.json                  # Configuration Expo
+├── App.tsx                   # Point d'entrée de l'application
+├── babel.config.js           # Configuration Babel
+├── package.json              # Dépendances et scripts
+└── README.md                 # Ce fichier
+```
+
+## 📝 Guide de développement
+
+### Conventions de code
+
+- Utiliser ESLint et Prettier pour maintenir un code propre et cohérent
+- Suivre les principes de l'architecture modulaire
+- Documenter les composants et les fonctions clés
+- Écrire des tests unitaires pour les fonctionnalités critiques
+
+### Flux de travail Git
+
+1. Créer une branche à partir de `develop` pour chaque nouvelle fonctionnalité
+2. Nommer les branches selon le format: `feature/nom-de-la-fonctionnalite`
+3. Faire des commits réguliers avec des messages descriptifs
+4. Créer une Pull Request pour intégrer les changements à `develop`
+5. Après validation, fusionner `develop` dans `main` pour les déploiements
+
+## 🔒 Sécurité
+
+- Authentification à deux facteurs via OTP SMS
+- Cryptage des données sensibles
+- Expiration automatique des sessions
+- Blocage de compte après plusieurs tentatives de PIN incorrectes
+- Conformité aux réglementations financières applicables
+
+## 📊 Architecture technique
+
+```
+┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+│                 │     │                 │     │                 │
+│  Applications   │     │  API Gateway    │     │  Microservices  │
+│  Mobile & Web   │◄───►│                 │◄───►│                 │
+│                 │     │                 │     │                 │
+└─────────────────┘     └─────────────────┘     └─────────────────┘
+                                                        │
+                                                        ▼
+                                               ┌─────────────────┐
+                                               │                 │
+                                               │  Base de données│
+                                               │                 │
+                                               └─────────────────┘
+```
+
+## 📋 Roadmap
+
+- **Phase 1**: Développement de l'application de base avec transferts d'argent et wallet
+- **Phase 2**: Ajout du système de commission et de parrainage
+- **Phase 3**: Intégration des demandes de prêt personnel
+- **Phase 4**: Automatisation des transactions (GIMAC)
+- **Phase 5**: Expansion à d'autres marchés et services financiers
+
+## 🤝 Contribution
+
+1. Fork le projet
+2. Créez votre branche de fonctionnalité (`git checkout -b feature/amazing-feature`)
+3. Committez vos changements (`git commit -m 'Ajout d'une fonctionnalité'`)
+4. Push vers la branche (`git push origin feature/amazing-feature`)
+5. Ouvrez une Pull Request
+
+## 📄 Licence
+
+[MIT License](LICENSE)
+
+## 📞 Contact
+
+NGC Financial Services - [site web](https://www.ngcfinancial.com)
+
+Responsable du projet: Mme Gaëlle NGOGANG - [email](mailto:contact@ngcfinancial.com)
+
+---
+
+© 2025 NGC Financial Services. Tous droits réservés.
